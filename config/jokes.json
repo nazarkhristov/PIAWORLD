@@ -8,13 +8,11 @@
 		[
 			{"type": 0, "text": "Wanna hear a joke?"},
 			{"type": 0, "text": "No?"},
-			{"type": 0, "text": "Then go fuck yourself."}
+			{"type": 0, "text": "Mute me then, thats your problem, not mine."}
 		],
 		[{"type": 0, "text": "{NAME} used /joke. Whoop-dee-fucking doo."}],
 		[{"type": 0, "text": "HEY YOU IDIOTS ITS TIME FOR A JOKE"}],
 		[{"type": 0, "text": "Senpai {NAME} wants me to tell a joke."}],
-		[{"type": 0, "text": "Hey niggers prepare for a joke."}],
-		[{"type": 0, "text": "Prepare to be offended faggots."}],
 		[
 			{"type": 0, "text": "Kill yourself like a trans person, {NAME}"},
 			{"type": 0, "text": "I'm not here to entertain you."}
@@ -42,12 +40,12 @@
 		],
 		[
 			{"type": 0, "text": "What goes in pink and comes out blue?"},
-			{"type": 0, "text": "Sonic's asshole."},
+			{"type": 0, "text": "Sonic's bullshit."},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
 			{"type": 0, "text": "What type of water won't freeze?"},
-			{"type": 0, "text": "Your mother's."},
+			{"type": 0, "text": "heavy water."},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
@@ -82,12 +80,7 @@
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
-			{"type": 0, "text": "NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER NIGGER"},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
-			{"type": 0, "text": "Why can't bfdi niggers graduate?"},
-			{"type": 0, "text": "Because they still have to repeat kindergarten!"},
+			{"type": 0, "text": "BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH BEHH"},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
@@ -117,7 +110,7 @@
 		],
 		[
 			{"type": 0, "text": "What is a cow that eats grass?"},
-			{"type": 0, "text": "ASS"},
+			{"type": 0, "text": "you, because you are cow that eat grass"},
 			{"type": 0, "text": "I'm a comedic genius, I know."},
 			{"type": 1, "anim": "shrug_back"}
 		],
