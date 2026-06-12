@@ -11,16 +11,24 @@
 	],
 	[
 		{"type": 1, "anim": "earth_fwd"},
-		{"type": 0, "text": "Did you know that Siobhan are both PEDOHPHILES?"},
+		{"type": 0, "text": "Did you know that Siobhan are PEDOHPHILES?"},
 		{"type": 1, "anim": "earth_back"},
 		{"type": 1, "anim": "grin_fwd"},
 		{"type": 1, "anim": "grin_back"}
 	],
-		[
+	[
 		{"type": 1, "anim": "earth_fwd"},
 		{"type": 0, "text": "Did you know that PIA Icon maded by mailbox auttp aka mythicalavella?"},
 		{"type": 1, "anim": "earth_back"},
 		{"type": 1, "anim": "grin_fwd"},
+		{"type": 1, "anim": "grin_back"}
+	],
+	[
+		{"type": 1, "anim": "earth_fwd"},
+		{"type": 0, "text": "Did you know that MR Soi, Altecata, Agent pro and mtv dance is terrible and horrible people?"},
+		{"type": 1, "anim": "earth_back"},
+		{"type": 1, "anim": "grin_fwd"},
+		{"type": 0, "text": "WOW! Nazar cut ties with 4 terrible enemy kiddie!"},
 		{"type": 1, "anim": "grin_back"}
 	],
 	[
