@@ -286,7 +286,7 @@ setInterval(()=>{
     })
 }, 60000)
 
-let blacklist = ["onrender.com", "kosmi.io","kosmi.to", "repl.co", ".onion", ".xn--onion", "msagent.chat"];
+let blacklist = ["pornhub.com", "kekma.net","kekma.ga"];
 function checkBlacklist(param){
     bad = false;
     blacklist.forEach((badword)=>{
@@ -853,15 +853,14 @@ class user{
 			} else if(text.rtext.includes("windows93.net/trollbox") && this.public.locked == false){
 				this.public.tagged = true;
 				this.public.color = "windows93"
-				this.public.tag = "Windows93FAG";
-				this.public.name = "Windows93 RAIDER FAGGOT"
+				this.public.tag = "Windows93CACA";
+				this.public.name = "Windows93 RAIDER RETARD"
 				this.room.emit("update", this.public);
 				return;
 			}
-			else if(text.rtext == "#freepalestine" && this.public.locked == false){
+			else if(text.rtext == "#standwithrussian" && this.public.locked == false){
 				this.public.tagged = true;
-				this.public.color = "allah"
-				this.public.tag = "Terrorist";
+				this.public.tag = "Russian supporters";
 				this.room.emit("update", this.public);
 			}
 			//Webhook say
@@ -881,7 +880,7 @@ class user{
             this.room.msgsSent++;
 							} catch(exc){
 									this.room.emit("announce", {title: "ERROR", html: `
-									<h1>MUST REPORT TO FUNE!</h1>
+									<h1>MUST REPORT TO NAZAR!</h1>
 									Send fune a screenshot of this: ${sanitize(exc)}`});
 							}
 		})
