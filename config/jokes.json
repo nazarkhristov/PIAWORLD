@@ -14,8 +14,8 @@
 		[{"type": 0, "text": "HEY YOU IDIOTS ITS TIME FOR A JOKE"}],
 		[{"type": 0, "text": "Senpai {NAME} wants me to tell a joke."}],
 		[
-			{"type": 0, "text": "Kill yourself like a trans person, {NAME}"},
-			{"type": 0, "text": "I'm not here to entertain you."}
+			{"type": 0, "text": "I'm not here to entertain you, {NAME}"},
+			{"type": 0, "text": "sorry"}
 		],
 		[
 			{"type": 0, "text": "Prepare for something Seamus never heard of, {NAME}"},
@@ -23,14 +23,14 @@
 			{"type": 0, "text": "HUMOUR"},
 			{"type": 1, "anim": "praise_back"}
 		],
-		[{"type": 0, "text": "THE FOLLOWING JOKE MAY OFFEND PEOPLE. IF YOU ARE OFFENDED, PLEASE GO TO GOATSE.INFO"}],
-		[{"type": 0, "text": "Ready for some classic Jewish comedy?"}],
+		[{"type": 0, "text": "HEY GUYS, IF YOU WANT TO TELL JOKE, PLEASE USE /joke"}],
+		[{"type": 0, "text": "Ready for some unfunny comedy?"}],
 		[{"type": 0, "text": "Time for whatever horrible fucking jokes the creator of this site wrote."}]
 	],
 	"middle": [
 		[
 			{"type": 0, "text": "What is easy to get into, but hard to get out of?"},
-			{"type": 0, "text": "Child support!"},
+			{"type": 0, "text": "Trouble"},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
@@ -50,23 +50,22 @@
 		],
 		[
 			{"type": 0, "text": "What is in the middle of Paris?"},
-			{"type": 0, "text": "A giant inflatable buttplug."},
+			{"type": 0, "text": "A giant inflatable nothingburger."},
+			{"type": 1, "anim": "shrug_back"}
+		],
+				[
+			{"type": 0, "text": "here is joke:"},
+			{"type": 0, "text": "Lucshit."},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
 			{"type": 0, "text": "Why did the chicken cross the road?"},
 			{"type": 1, "anim": "shrug_back"},
-			{"type": 0, "text": "Ok, let's get serious. I'll let you in on a little secret the feds don't want you knowing."},
-			{"type": 0, "text": "Phones have a secret \"Instant Charging\" feature, you can enable it by microwaving your phone."}
+			{"type": 0, "text": "To get hit by car!"}
 		],
 		[
 			{"type": 0, "text": "What do you call a man who shaves 10 times a day?"},
-			{"type": 0, "text": "A woman."},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
-			{"type": 0, "text": "Why can't asians drive?"},
-			{"type": 0, "text": "Because their eyes are always closed!"},
+			{"type": 0, "text": "A centipede."},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
@@ -76,7 +75,7 @@
 		],
 		[
 			{"type": 0, "text": "Why was six afraid of seven?"},
-			{"type": 0, "text": "Because seven was a sex offender!"},
+			{"type": 0, "text": "Because seven was a s-NVM"},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
@@ -84,23 +83,8 @@
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
-			{"type": 0, "text": "Who did the evil hohol piggy blame for his mistakes?"},
-			{"type": 0, "text": "Putain"},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
 			{"type": 0, "text": "How many arabs does it take to knock down a lightbulb?"},
 			{"type": 0, "text": "I don't know but just a few can knock down 2 towers."},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
-			{"type": 0, "text": "What do you call an autistic child with herpes?"},
-			{"type": 0, "text": "Seamus Kendrick Cremeens from Sullivan, Ohio."},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
-			{"type": 0, "text": "Humans are like jokes."},
-			{"type": 0, "text": "Not everyone likes the dark ones!"},
 			{"type": 1, "anim": "shrug_back"}
 		],
 		[
@@ -141,8 +125,7 @@
 		],
 		[{"type": 0, "text": "Where do I come up with these? My ass?"}],
 		[{"type": 0, "text": "NOW LAUGH!"}],
-		[{"type": 0, "text": "You should tell these jokes to your mother!"}],
-		[{"type": 0, "text": "I hope you're offended."}],
+		[{"type": 0, "text": "You should tell these jokes!"}],
 		[{"type": 0, "text": "Maybe I'll keep my day job, {NAME}. Patreon didn't accept me."}]
 	]
 }
