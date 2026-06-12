@@ -60,6 +60,7 @@ module.exports.vpnLocked = false;
 const whitelist = [
 	"https://files.catbox.moe",
 	"https://i.ibb.co",
+	"https://leopard.hosting.pecon.us",
 ];
 module.exports.whitelist = whitelist;
 setInterval(()=>{module.exports.bancount = 0}, 60000*5)
