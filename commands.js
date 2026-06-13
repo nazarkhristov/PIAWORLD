@@ -239,7 +239,7 @@ module.exports.commands = {
 	youtube: (user, param)=>{
 		param = param.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/);
 		if(param == null || param[7] == undefined) param = [0,0,0,0,0,0,0,param];
-		user.room.emit("talk", {guid: user.public.guid, text: '<iframe class="usermedia" src="https://www.youtube.com/embed/'+param[7]+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>', say: ""})
+		user.room.emit("talk", {guid: user.public.guid, text: '<iframe class="usermedia" src="https://www.youtube.com/embed/'+param[7]+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', say: ""})
 	},
 	video: (user, param)=>{
 		if(whitelist.some(ccurl => param.startsWith(ccurl + "/"))){
@@ -399,9 +399,9 @@ module.exports.commands = {
 		tonuke.room.emit("talk", {guid: tonuke.public.guid, text: "I AM A GAY FAGGOT"});
 	},
 	poll: (user, param)=>{
-    Object.keys(user.room.users).forEach(usr=>{
-      user.room.users[usr].vote = 0;
-    })
+     Object.keys(user.room.users).forEach(usr=>{
+       user.room.users[usr].vote = 0;
+     })
 		user.room.polldata = {name: user.public.name, title: param, yes: 0, no: 0};
 		user.room.emit("poll", user.room.polldata);
 	},
@@ -418,6 +418,12 @@ module.exports.commands = {
 		user.room.emit("vote", user.room.polldata);
 	},
 	ban: (user, param)=>{
+    // Permission check: only users with level 2 or higher can ban
+    if(user.level < 2){
+      user.socket.emit("window", {title: "BAN FAILED", html: "INSUFFICIENT PERMISSIONS"});
+      return;
+    }
+    
     if(!param.includes(" ")) return;
     let reason = param.substring(param.indexOf(" ")+1, param.length);
     param = param.substring(0, param.indexOf(" "));
@@ -445,64 +451,64 @@ module.exports.commands = {
 	},
   advinfo: (user, param)=>{
 		let victim = find(param);
-    if(victim == null) return;
-    user.socket.emit("window", {title: victim.public.name, html: `
-      GUID: ${victim.public.guid}<br>
-      IP: ${victim.socket.ip}<br>
-      X-FORWARDED-FOR: ${victim.socket.handshake.headers["x-forwarded-for"]}<br>
-      RAW: ${victim.socket.handshake.address}<br><br>
-      HEADERS<br>
-      ${JSON.stringify(victim.socket.handshake.headers)}
-      `})
-  },
-  smute: (user, param)=>{
-  		let victim = find(param);
-      if(victim == null || victim.level >= user.level) return;
-      victim.smute = !victim.smute;
-  },
-  banmenu: (user, param)=>{
-  	let victim = find(param);
-    if(victim == null || victim.level >= user.level) return;
-    user.socket.emit("banwindow", {name: victim.public.name, ip: victim.socket.ip})
-  },
-  massbless: (user)=>{
-    Object.keys(user.room.users).forEach(usr=>{
-      usr = user.room.users[usr];
-      if(usr.level < 0.1){
-        usr.public.color = "blessed";
-        usr.public.tagged = true;
-        usr.public.tag = "Blessed";
-        usr.level = 0.1;
-        user.room.emit("update", usr.public)
-      }
-    })
-  },
-  baninfo: (user)=>{
-    user.socket.emit("window", {title: "Ban Data (past 5 mins)", html: `
-    There were ${module.exports.bancount} bans in the past 5 minutes
-    `})
-  },
-  sex: (user, param)=>{
-    user.socket.disconnect();
-  },
-  triggered: user=>{
-    user.room.emit("actqueue", {
-  		guid: user.public.guid,
-      list: copypastas.triggered
-    })
-  },
-  linux: user=>{
-    user.room.emit("actqueue", {
-  		guid: user.public.guid,
-      list: copypastas.linux
-    })
-  },
-  pawn: user=>{
-      user.room.emit("actqueue", {
-    		guid: user.public.guid,
-        list: copypastas.pawn
-      })
-  }
+     if(victim == null) return;
+     user.socket.emit("window", {title: victim.public.name, html: `
+       GUID: ${victim.public.guid}<br>
+       IP: ${victim.socket.ip}<br>
+       X-FORWARDED-FOR: ${victim.socket.handshake.headers["x-forwarded-for"]}<br>
+       RAW: ${victim.socket.handshake.address}<br><br>
+       HEADERS<br>
+       ${JSON.stringify(victim.socket.handshake.headers)}
+       `})
+   },
+   smute: (user, param)=>{
+   		let victim = find(param);
+       if(victim == null || victim.level >= user.level) return;
+       victim.smute = !victim.smute;
+   },
+   banmenu: (user, param)=>{
+   	let victim = find(param);
+     if(victim == null || victim.level >= user.level) return;
+     user.socket.emit("banwindow", {name: victim.public.name, ip: victim.socket.ip})
+   },
+   massbless: (user)=>{
+     Object.keys(user.room.users).forEach(usr=>{
+       usr = user.room.users[usr];
+       if(usr.level < 0.1){
+         usr.public.color = "blessed";
+         usr.public.tagged = true;
+         usr.public.tag = "Blessed";
+         usr.level = 0.1;
+         user.room.emit("update", usr.public)
+       }
+     })
+   },
+   baninfo: (user)=>{
+     user.socket.emit("window", {title: "Ban Data (past 5 mins)", html: `
+     There were ${module.exports.bancount} bans in the past 5 minutes
+     `})
+   },
+   sex: (user, param)=>{
+     user.socket.disconnect();
+   },
+   triggered: user=>{
+     user.room.emit("actqueue", {
+   		guid: user.public.guid,
+       list: copypastas.triggered
+     })
+   },
+   linux: user=>{
+     user.room.emit("actqueue", {
+   		guid: user.public.guid,
+       list: copypastas.linux
+     })
+   },
+   pawn: user=>{
+       user.room.emit("actqueue", {
+     		guid: user.public.guid,
+         list: copypastas.pawn
+       })
+   }
 }
 
 function find(guid){
@@ -527,14 +533,14 @@ function markup(tomarkup){
   tomarkup = tomarkup.replace(/\\n/g, "<br>")
 	let old = "";
 	tomarkup = tomarkup.replace(/\$r\$/g, "###");
-    //Markleft
-    let newmarkup = tomarkup.split("$");
-    tomarkup = "";
-    let lmk = 0;
-    for(i=0;i<newmarkup.length;i++){
-    	//Styling
-    	if(i%2 == 1){
-    		let rules = newmarkup[i].replace(/ /g, "").split(",");
+     //Markleft
+     let newmarkup = tomarkup.split("$");
+     tomarkup = "";
+     let lmk = 0;
+     for(i=0;i<newmarkup.length;i++){
+     	//Styling
+     	if(i%2 == 1){
+     		let rules = newmarkup[i].replace(/ /g, "").split(",");
 	    		rules.forEach(rule=>{
 	    			rule = rule.split("=");
 	    			if(rule.length == 2 && rule[0] == "icon"){
@@ -546,28 +552,28 @@ function markup(tomarkup){
 		    			lmk++;
 	    			}
 	    		})
-    	}
-    	//Text
-    	else{
-    		old+=newmarkup[i];
-    		tomarkup+=newmarkup[i]
-    		for(i2=0;i2<lmk;i2++) tomarkup+= "</span>";
-    		lmk = 0;
-    	}
-    }
+     	}
+     	//Text
+     	else{
+     		old+=newmarkup[i];
+     		tomarkup+=newmarkup[i]
+     		for(i2=0;i2<lmk;i2++) tomarkup+= "</span>";
+     		lmk = 0;
+     	}
+     }
 	//Shortcuts
-    Object.keys(markuprules).forEach(markuprule => {
-    	while(old.includes(markuprule)) old = old.replace(markuprule, "");
-        var toggler = true;
-        tomarkup = tomarkup.split(markuprule);
-        endrule = markuprules[markuprule];
-        if (endrule.includes(" ")) endrule = endrule.substring(0, endrule.indexOf(" "));
-        for (ii = 0; ii < tomarkup.length; ii++) {
-            toggler = !toggler;
-            if (toggler) tomarkup[ii] = "<" + markuprules[markuprule] + ">" + tomarkup[ii] + "</" + endrule + ">"
-        }
-        tomarkup = tomarkup.join("");
-    })
+     Object.keys(markuprules).forEach(markuprule => {
+     	while(old.includes(markuprule)) old = old.replace(markuprule, "");
+         var toggler = true;
+         tomarkup = tomarkup.split(markuprule);
+         endrule = markuprules[markuprule];
+         if (endrule.includes(" ")) endrule = endrule.substring(0, endrule.indexOf(" "));
+         for (ii = 0; ii < tomarkup.length; ii++) {
+             toggler = !toggler;
+             if (toggler) tomarkup[ii] = "<" + markuprules[markuprule] + ">" + tomarkup[ii] + "</" + endrule + ">"
+         }
+         tomarkup = tomarkup.join("");
+     })
 	if(tomarkup.startsWith("&gt;")) tomarkup="<font color='#789922'>"+tomarkup+"</font>";
 	return {mtext: tomarkup, rtext: old};
 }
